@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: 'terminal-zero'
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: db_terminzal_zero
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+
+    ports:
+      - "5438:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:
